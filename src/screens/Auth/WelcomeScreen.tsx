@@ -13,10 +13,20 @@ import AppInput from '../../components/AppInput'
 import WelcomeStyles from '../../styles/WelcomeScreen.styles'
 import { Images } from '../../assets'
 import { Dimensions } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import AppButton from '../../components/AppButton'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { AppNavigatorParamList } from '../../navigators/RootNavigator'
+
+
+
+
+
 
 const { height } = Dimensions.get('window')
 
 const WelcomeScreen = () => {
+   const navigation = useNavigation<NativeStackNavigationProp<AppNavigatorParamList>>()
   const [keyboardVisible, setKeyboardVisible] = useState(false)
 
   const logoScale = useRef(new Animated.Value(1)).current
@@ -123,8 +133,17 @@ const WelcomeScreen = () => {
             />
           </TouchableOpacity>
         )}
+
+        {keyboardVisible && (
+  <AppButton
+    label="Continue"
+    onPress={() => navigation.navigate('Home')}
+  />
+)}
+
       </Background>
     </View>
   )
 }
+ 
 export default WelcomeScreen

@@ -1,2 +1,5 @@
-export * from "./HomeScreen"
+export * from "./HomeScreen/HomeScreen"
 export * from "./Splash/SplashScreen"
+export * from "./Assets/AssetsScreen"
+export * from "./Trade/TradeScreen"
+export * from "./Explore/ExploreScreen"

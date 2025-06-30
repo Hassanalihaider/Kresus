@@ -15,8 +15,8 @@ type Props = {
 const Background = ({ showContent = true,children ,showLogo,hideBottomImages  }: Props) => {
   return (
     <LinearGradient
-     colors={['#080C4C', '#0B0F70', '#0E1799']} 
-  locations={[0, 0.5, 1]}
+     colors={['#080C4C',  '#0E1799']} 
+  locations={[0, 1]}
       style={BackgroundStyles.gradient}
       //  colors={['#080C4C', '#0E1799']}
     //   locations={[0.5,1]} (will discuss issue with sir )
