@@ -8,13 +8,13 @@ const routeNames = {
   homeScreen: "Home",
   welcome: "Welcome"
 }
+export type AppNavigatorParamList = {
+  Splash: undefined
+  Welcome: undefined
+  Home: undefined
 
-// export type RootStackParamList = {
-//   Splash: undefined; 
-//   Welcome:undefined,
-//   Home: undefined;
+}
 
-// }
 const Stack = createNativeStackNavigator()
 const RootNavigator = () => {
   return (
