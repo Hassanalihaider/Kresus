@@ -137,7 +137,7 @@ const WelcomeScreen = () => {
         {keyboardVisible && (
   <AppButton
     label="Continue"
-    onPress={() => navigation.navigate('Home')}
+    onPress={() => navigation.navigate('BottomNavigator')}
   />
 )}
 
