@@ -11,12 +11,11 @@ const BackgroundStyles  = StyleSheet.create({
   },
   gradient: {
  
-     flex: 1,
+   //  flex: 1,
   width: '100%',
   height: '100%', 
   },
   logo: {
- 
     position: 'absolute',
     top: height * 0.06, 
     alignSelf: 'center',
@@ -52,6 +51,7 @@ const BackgroundStyles  = StyleSheet.create({
     height: height * 0.1, 
   },
   childrenContainer: {
+  
   position: 'absolute',
   top: 0,
   left: 0,
