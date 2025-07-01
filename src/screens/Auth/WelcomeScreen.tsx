@@ -19,10 +19,6 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { AppNavigatorParamList } from '../../navigators/RootNavigator'
 
 
-
-
-
-
 const { height } = Dimensions.get('window')
 
 const WelcomeScreen = () => {
@@ -32,6 +28,7 @@ const WelcomeScreen = () => {
   const logoScale = useRef(new Animated.Value(1)).current
   const logoTranslateY = useRef(new Animated.Value(0)).current
   const inputTranslateY = useRef(new Animated.Value(0)).current
+  const [emailText, setEmailText] = useState('')
 
   useEffect(() => {
     const showSub = Keyboard.addListener('keyboardDidShow', () => {
@@ -110,7 +107,7 @@ const WelcomeScreen = () => {
             </>
           )}
 
-          <AppInput placeholder="Enter your email" />
+          <AppInput placeholder="Enter your email" onChangeText={setEmailText} />
         </Animated.View>
 
        
@@ -137,7 +134,7 @@ const WelcomeScreen = () => {
         {keyboardVisible && (
   <AppButton
     label="Continue"
-    onPress={() => navigation.navigate('Home')}
+  onPress={() => navigation.navigate('Otp', { email: emailText })}
   />
 )}
 

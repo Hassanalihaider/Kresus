@@ -1,12 +1,100 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  // Skeleton Styles
+  cardContainer: {
+    width: '95%',
+    marginLeft: 10,
+    backgroundColor: '#0D1A47',
+    borderRadius: 16,
+    overflow: 'hidden',
+    marginBottom: 20,
+    paddingBottom: 12,
+  },
+  earnBadge: {
+    position: 'absolute',
+    top: 10,
+    left: 10,
+    zIndex: 1,
+    backgroundColor: '#2972FF',
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 8,
+  },
+  earnBadgeText: {
+    color: 'white',
+    fontSize: 12,
+    fontWeight: 'bold',
+  },
+  bannerImage: {
+    width: '100%',
+    height: 180,
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
+  },
+  bottomSection: {
+    marginTop: 10,
+    paddingHorizontal: 16,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  logoAndText: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  logo: {
+    width: 36,
+    height: 36,
+    borderRadius: 8,
+  },
+  title: {
+    color: 'white',
+    fontWeight: '600',
+    fontSize: 14,
+  },
+  subtitle: {
+    color: '#A0A8BC',
+    fontSize: 12,
+    marginTop: 2,
+  },
+  launchButton: {
+    backgroundColor: 'white',
+    paddingHorizontal: 14,
+    paddingVertical: 6,
+    borderRadius: 20,
+  },
+  launchButtonText: {
+    color: '#0D1A47',
+    fontWeight: '600',
+    fontSize: 13,
+  },
 skeletonLine: {
   backgroundColor: '#1a1a2e',
   borderRadius: 4,
   height: 12,
   marginBottom: 6,
+},
+activeFooterIcon: {
+  width: 24,
+  height: 24,
+  tintColor: '#ffffff', 
+},
+inactiveFooterIcon: {
+  width: 24,
+  height: 24,
+  tintColor: '#888',
+},
+activeFooterText: {
+  color: '#ffffff',
+  fontWeight: '600',
+},
+inactiveFooterText: {
+  color: '#888',
+},
+footer: {
+  backgroundColor: '#01021d',
+  borderTopWidth: 0.5,
+  borderTopColor: '#01021d',
 },
 skeletonSummaryCard: {
   backgroundColor: '#101038',
@@ -121,8 +209,8 @@ skeletonTextBlock: {
   marketActivityCard: {
   backgroundColor: '#0734A9',
   borderRadius: 16,
-  padding: 16,
-  marginBottom: 16,
+  padding: 8,
+  marginBottom: 10,
 },
 prosBuyingSection: {
   marginBottom: 12,
@@ -158,10 +246,10 @@ tradeButton: {
   flexDirection: 'row',
   alignItems: 'center',
   backgroundColor: '#fff',
-  paddingVertical: 12,
-  paddingHorizontal: 20,
+  paddingVertical: 8,
+  paddingHorizontal: 12,
   borderRadius: 20,
-  marginLeft: 110,
+  marginLeft: 80,
 },
 tradeIcon: {
   width: 10,
@@ -171,7 +259,7 @@ tradeIcon: {
 },
 tradeButtonText: {
   color: 'black',
-  fontSize: 14,
+  fontSize: 12,
   fontWeight: 'bold',
 },
 marketDataRow: {
@@ -204,7 +292,7 @@ cardDivider: {
 },
 buyersSellersContainer: {
   flexDirection: 'row',
-  height: 10,
+  height: 3,
   borderRadius: 15,
   overflow: 'hidden',
 },
@@ -228,35 +316,6 @@ sellersText: {
   fontSize: 12,
   fontWeight: 'bold',
 },
-graphContainer: {
-  marginVertical: 12,
-  overflow: 'hidden',
-},
-graphBackground: {
-  flex: 1,
-  backgroundColor: '#101038',
-  borderRadius: 8,
-  justifyContent: 'flex-end',
-},
-graphLineContainer: {
-  position: 'relative',
-  height: '100%',
-},
-graphBar: {
-  position: 'absolute',
-  bottom: 0,
-  borderRadius: 2,
-},
-graphDottedLine: {
-  position: 'absolute',
-  bottom: '20%',
-  left: 0,
-  right: 0,
-  height: 1,
-  borderBottomWidth: 1,
-  borderBottomColor: '#666',
-  borderStyle: 'dashed',
-},
   summaryCard: {
   backgroundColor: '#101038',
   borderRadius: 16,
@@ -267,7 +326,7 @@ summaryTopSection: {
   marginBottom: 12,
 },
 cryptoTotalValue: {
-  fontSize: 32,
+  fontSize: 28,
   fontWeight: 'bold',
   color: 'white',
   marginBottom: 8,
@@ -277,34 +336,31 @@ cryptoChangeRow: {
   alignItems: 'center',
 },
 cryptoChangeText: {
-  fontSize: 14,
+  fontSize: 12,
 },
-
 cryptoChangeTime: {
   color: '#666',
-  fontSize: 14,
+  fontSize: 12,
 },
-
 timeFilterContainer: {
   flexDirection: 'row',
   justifyContent: 'space-between',
-  marginTop: 12,
 },
 timeFilterButton: {
   backgroundColor: '#1a1a2e',
-  paddingVertical: 8,
-  paddingHorizontal: 16,
+  paddingVertical: 5,
+  paddingHorizontal: 12,
   borderRadius: 20,
 },
 activeTimeFilterButton: {
-  backgroundColor: '#b58904',
+  backgroundColor: '#ffffff',
 },
 timeFilterText: {
-  color: '#666',
-  fontSize: 14,
+  color: 'white',
+  fontSize: 12,
 },
 activeTimeFilterText: {
-  color: 'white',
+  color: 'black',
 },
 prostext:{
   color: 'lightblue',
@@ -411,20 +467,21 @@ cryptoChangeNegative: {
   container: {
     flex: 1,
     backgroundColor: '#01021d',
-    paddingVertical: 20,
+    paddingVertical: 10,
   },
   content: {
-    padding: 16,
+    padding: 15,
     paddingBottom: 80, 
   },
     header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
     borderBottomWidth: 1,
     borderBottomColor: '#1a1a2e',
+    position: 'relative'
   },
   profileContainer: {
     flexDirection: 'row',
@@ -453,46 +510,18 @@ cryptoChangeNegative: {
     height: 24,
     tintColor: 'white',
   },
-  
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    paddingVertical: 12,
-    borderTopWidth: 1,
-    borderTopColor: '#1a1a2e',
-    backgroundColor: '#01021d',
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
   footerItem: {
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 20,
   },
   footerIcon: {
     width: 27,
     height: 27,
-    marginBottom: 4,
-    resizeMode: 'contain'
+    marginBottom: 30,
+    resizeMode: 'contain',
+
   },
-  activeFooterIcon: {
-    tintColor: '#b58904',
-  },
-  inactiveFooterIcon: {
-    tintColor: '#666',
-  },
-  footerText: {
-    fontSize: 12,
-  },
-  activeFooterText: {
-    color: '#b58904',
-  },
-  inactiveFooterText: {
-    color: '#666',
-  },
-  
   realCard: {
     marginBottom: 16,
     backgroundColor: '#101038',

@@ -12,7 +12,12 @@ import { Images } from '../assets'
 
 const { width } = Dimensions.get('window')
 
-const AppInput = ({ placeholder }: { placeholder: string }) => {
+interface AppInputProps {
+  placeholder: string
+  onChangeText?: (text: string) => void
+}
+
+const AppInput =  ({ placeholder, onChangeText }: AppInputProps)  => {
   const [text, setText] = useState('')
 
   return (
@@ -20,7 +25,10 @@ const AppInput = ({ placeholder }: { placeholder: string }) => {
       <View style={styles.inputWrapper}>
         <TextInput
           value={text}
-          onChangeText={setText}
+          onChangeText={(val) => {
+    setText(val)
+    onChangeText?.(val) 
+  }}
           placeholder={placeholder}
           placeholderTextColor="#ADD2FD"
           style={styles.input}
