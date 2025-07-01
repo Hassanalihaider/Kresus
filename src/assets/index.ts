@@ -18,9 +18,15 @@ export const Images = {
   coinlogo : require('./images/coinlogo.png'),
   tradelogo : require('./images/trade.png'),
   pros: require('./images/pros.png'),
- cross:require('./images/cross.png'),
- comment:require('./images/comment.png'),
- back:require('./images/back.png'),
- backarrow:require('./images/backarrow.png'),
- backscreen:require('./images/backscreen.png')
+  cross:require('./images/cross.png'),
+  projects: require('./images/Projectsmain.png'),
+  projectlogo: require('./images/projectlogo.png'),
+  list1: require('./images/list1.png'),
+  list2: require('./images/list2.png'),
+  list3: require('./images/list3.png'),
+  list4: require('./images/list4.png'),
+  list5: require('./images/list5.png'),
+  list6: require('./images/list6.png'),
+  backscreen: require('./images/backscreen.png'),
+  comment: require('./images/comment.png')
 }

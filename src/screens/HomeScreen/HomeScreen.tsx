@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { View, Image, Text, TouchableOpacity, ScrollView } from 'react-native';
-import { SkeletonLoader, ActionButtons, SummaryCard, MarketActivityCard } from '../../components';
+import { FlatList, Dimensions } from 'react-native';
+import { SkeletonLoader, ActionButtons, SummaryCard, MarketActivityCard, Projects, ProjectsList, SecurityBottomSheet } from '../../components';
 import styles from '../../styles/homestyles';
 import { Images } from '../../assets/index';
+
+const { width: screenWidth } = Dimensions.get('window');
+const renderMarketCard = () => (
+<View style={{ width: screenWidth * 0.8, height: screenWidth * 0.65, marginRight: 12 }}>
+  <MarketActivityCard />
+</View>
+);
 
 export const HomeScreen: React.FC = () => {
   const [profilename] = useState('Nate Diggity');
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState('Home');
   const [activeFilter, setActiveFilter] = useState('1D');
   const [showContent, setShowContent] = useState(false);
 
@@ -20,41 +27,11 @@ export const HomeScreen: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const renderFooterItem = (tabName: string) => {
-    const iconSource = Images[tabName.toLowerCase() as keyof typeof Images] || Images.home;
-    const isActive = activeTab === tabName;
-    
-    return (
-      <TouchableOpacity 
-        key={`tab-${tabName}`}
-        style={styles.footerItem} 
-        onPress={() => setActiveTab(tabName)}
-      >
-        <Image
-          source={iconSource}
-          style={[
-            styles.footerIcon,
-            isActive ? styles.activeFooterIcon : styles.inactiveFooterIcon
-          ]}
-        />
-        <Text style={[
-          styles.footerText,
-          isActive ? styles.activeFooterText : styles.inactiveFooterText
-        ]}>
-          {tabName}
-        </Text>
-      </TouchableOpacity>
-    );
-  };
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.profileContainer}>
-          <Image
-            source={Images.profileicon}
-            style={styles.profileIcon}
-          />
+          <Image source={Images.profileicon} style={styles.profileIcon} />
           <Text style={styles.profileName}>{profilename}</Text>
         </View>
         <View style={styles.headerIcons}>
@@ -70,17 +47,36 @@ export const HomeScreen: React.FC = () => {
       <ScrollView contentContainerStyle={styles.content}>
         {showContent ? (
           <>
-            <SummaryCard 
-              activeFilter={activeFilter}
-              onFilterChange={setActiveFilter}
-            />
-            <ActionButtons />
-            <View style={styles.prossection}>
-              <Text style={styles.prostext}>What the Pros are Buying</Text>
-              <Image source={Images.pros} style={styles.prosicon} />
-            </View>
-            
-            <MarketActivityCard 
+      <FlatList
+        data={[1, 2]} 
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        pagingEnabled
+        keyExtractor={(item, index) => `summary-${index}`}
+        renderItem={() => (
+          <SummaryCard activeFilter={activeFilter} onFilterChange={setActiveFilter} />
+        )}
+        contentContainerStyle={{ paddingHorizontal: 16 }}
+        snapToAlignment="center"
+      />
+      <ActionButtons />
+      <View style={styles.prossection}>
+      <Text style={styles.prostext}>What the Pros are Buying</Text>
+      <Image source={Images.pros} style={styles.prosicon} />
+      </View>
+
+      <FlatList
+            data={[1, 2, 3]} 
+            horizontal
+            pagingEnabled
+            keyExtractor={(item, index) => `market-${index}`}
+            renderItem={renderMarketCard}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ paddingHorizontal: 16 }}
+            ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
+      />
+
+            {/* <MarketActivityCard
               coinName="Jupiter"
               coinPrice="$1.04"
               marketCap="$1.41B"
@@ -88,7 +84,13 @@ export const HomeScreen: React.FC = () => {
               isPositive={true}
               buyersPercentage={36}
               sellersPercentage={64}
-            />
+            /> */}
+
+            <Text style={styles.prostext}>Projects to Try</Text>
+            <Projects />
+            <ProjectsList/>
+            <SecurityBottomSheet/>
+
           </>
         ) : (
           <>
@@ -98,10 +100,6 @@ export const HomeScreen: React.FC = () => {
           </>
         )}
       </ScrollView>
-
-      <View style={styles.footer}>
-        {['Home', 'Assets', 'Trade', 'Explore'].map(renderFooterItem)}
-      </View>
     </View>
   );
 };

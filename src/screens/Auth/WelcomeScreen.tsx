@@ -19,10 +19,6 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { AppNavigatorParamList } from '../../navigators/RootNavigator'
 
 
-
-
-
-
 const { height } = Dimensions.get('window')
 
 const WelcomeScreen = () => {
@@ -139,7 +135,6 @@ const WelcomeScreen = () => {
   <AppButton
     label="Continue"
   onPress={() => navigation.navigate('Otp', { email: emailText })}
-
   />
 )}
 
