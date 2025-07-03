@@ -1,6 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomeScreen, TradeScreen, ExploreScreen, AssetsScreen } from '../screens';
+// import { HomeScreen, TradeScreen, ExploreScreen, AssetsScreen } from '../screens';
+import { HomeScreen } from '../screens/HomeScreen/HomeScreen';
+import { ExploreScreen } from '../screens/Explore/ExploreScreen';
+import { TradeScreen } from '../screens/Trade/TradeScreen';
+import { AssetsScreen } from '../screens/Assets/AssetsScreen';
 import { Image, Text } from 'react-native';
 import { Images } from '../assets/index'; 
 import styles from '../styles/homestyles';

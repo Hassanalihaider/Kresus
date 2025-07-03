@@ -26,7 +26,7 @@ export const MarketActivityCard: React.FC<MarketActivityCardProps> = ({
 }) => {
   return (
     <View style={styles.marketActivityCard}>
-      <View style={styles.prosBuyingSection}>
+      <View>
         <View style={styles.coinInfoHeader}>
           <Image 
             source={Images.coinlogo}

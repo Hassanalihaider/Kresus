@@ -24,7 +24,7 @@ export const OtpSuccessScreen = () => {
               style={styles.primaryBtn}
               onPress={() => {
                
-                navigation.navigate('Welcome') 
+                navigation.navigate('BottomNavigator') 
               }}
             >
               <Text style={styles.btnText}>Continue</Text>
