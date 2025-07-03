@@ -6,7 +6,8 @@ import {
   Dimensions,
   Text,
   TouchableWithoutFeedback,
-  Keyboard
+  Keyboard,
+  Pressable
 } from 'react-native'
 
 interface Props {
@@ -16,69 +17,57 @@ interface Props {
 
 const { width } = Dimensions.get('window')
 
-const OTPInputBox = ({ onStartTyping ,onComplete}: Props) => {
-
+const OTPInputBox = ({ onStartTyping, onComplete }: Props) => {
   const inputRef = useRef<TextInput>(null)
   const [otp, setOtp] = useState<string>('')
 
-   const handleChange = (value: string) => {
-    const cleanValue = value.replace(/[^0-9]/g, '')
-    if (cleanValue.length <= 6) {
-      
-      if (cleanValue.length === 1 && otp.length === 0) {
-        onStartTyping?.()
-      }
- if (cleanValue.length === 6) {
-        onComplete?.(cleanValue)
+  const handleChange = (value: string) => {
+    const clean = value.replace(/[^0-9]/g, '')
+    if (clean.length <= 6) {
+      if (clean.length === 1 && otp.length === 0) onStartTyping?.()
+      if (clean.length === 6) {
+        onComplete?.(clean)
         Keyboard.dismiss()
       }
-
-      setOtp(cleanValue)
+      setOtp(clean)
     }
   }
 
-  const handleFocus = () => {
-    if (inputRef.current) {
-      inputRef.current.blur()   
-      setTimeout(() => {
-        inputRef.current?.focus() 
-      }, 100)
-    }
+  const handleBoxPress = (index: number) => {
+    const newOtp = otp.slice(0, index)
+    setOtp(newOtp)
+    inputRef.current?.focus()
   }
 
-  const boxes = Array(6).fill('').map((_, index) => (
-    <View
-      key={index}
-      style={[
-        styles.box,
-        otp.length === index && styles.activeBox
-      ]}
-    >
-      <Text style={styles.digit}>{otp[index] || ''}</Text>
-    </View>
-  ))
+
+
 
   return (
-    <TouchableWithoutFeedback onPress={handleFocus}>
-      <View style={styles.wrapper}>
-        <View style={styles.boxRow}>{boxes}</View>
-
-        <TextInput
-          ref={inputRef}
-          style={styles.hiddenInput}
-          value={otp}
-          onChangeText={handleChange}
-          maxLength={6}
-          keyboardType="number-pad"
-          autoFocus
-          blurOnSubmit={false}
-        />
+    <View style={styles.wrapper}>
+      <View style={styles.boxRow}>
+        {Array(6).fill('').map((_, i) => (
+          <TouchableWithoutFeedback key={i} onPress={() => handleBoxPress(i)}>
+            <View style={[styles.box, otp.length === i && styles.activeBox]}>
+              <Text style={styles.digit}>{otp[i] || ''}</Text>
+            </View>
+          </TouchableWithoutFeedback>
+        ))}
       </View>
-    </TouchableWithoutFeedback>
+
+      <TextInput
+      caretHidden={true}
+        ref={inputRef}
+        value={otp}
+        onChangeText={handleChange}
+        maxLength={6}
+        keyboardType="number-pad"
+        autoFocus
+        style={styles.hiddenInput}
+      />
+    </View>
   )
 }
 
-const boxSize = 45
 const styles = StyleSheet.create({
   wrapper: {
     marginTop: 20,
@@ -87,42 +76,38 @@ const styles = StyleSheet.create({
   boxRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    // alignSelf: 'center',
     width: width * 0.8,
-    columnGap: 8, 
-
-   
+    columnGap: 8,
   },
   box: {
-   width: 48,
-  height: 70,
+    width: 48,
+    height: 70,
     borderWidth: 1,
     borderColor: '#ADD2FD',
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(8, 12, 76, 0.66)'
+    backgroundColor: 'rgba(8, 12, 76, 0.66)',
   },
   activeBox: {
     borderColor: '#FFFFFF',
   },
   digit: {
-  width: 26,
-  height: 37,
-  fontSize: 44,
-  lineHeight: 37,
-  textAlign: 'center',
-  fontWeight: '300', 
+    width: 26,
+    height: 37,
+    fontSize: 44,
+    lineHeight: 37,
+    textAlign: 'center',
+    fontWeight: '300',
     color: '#FFFFFF',
- 
   },
   hiddenInput: {
-      position: 'absolute',
-  opacity: 0.05,
-  height: 70, 
+    position: 'absolute',
+  opacity: 0.05,  
+  height: 20,    
   width: width * 0.8,
   textAlign: 'center',
-  paddingTop: 15, 
+  paddingTop: 15,
   },
 })
 
