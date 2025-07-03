@@ -107,7 +107,14 @@ const WelcomeScreen = () => {
             </>
           )}
 
-          <AppInput placeholder="Enter your email" onChangeText={setEmailText} />
+          {/* <AppInput placeholder="Enter your email" onChangeText={setEmailText} /> */}
+          <AppInput
+  placeholder="Enter your email"
+  value={emailText}
+  onChangeText={setEmailText}
+  onClear={() => setEmailText('')}
+/>
+
         </Animated.View>
 
        

@@ -28,5 +28,6 @@ export const Images = {
   list5: require('./images/list5.png'),
   list6: require('./images/list6.png'),
   backscreen: require('./images/backscreen.png'),
-  comment: require('./images/comment.png')
+  comment: require('./images/comment.png'),
+  iconcircle:require('./images/iconcircle.png')
 }

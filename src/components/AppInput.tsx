@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   TextInput,
   StyleSheet,
@@ -14,31 +14,28 @@ const { width } = Dimensions.get('window')
 
 interface AppInputProps {
   placeholder: string
+  value: string                          
   onChangeText?: (text: string) => void
+  onClear?: () => void                    
 }
 
-const AppInput =  ({ placeholder, onChangeText }: AppInputProps)  => {
-  const [text, setText] = useState('')
-
+const AppInput = ({ placeholder, value, onChangeText, onClear }: AppInputProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.inputWrapper}>
         <TextInput
-          value={text}
-          onChangeText={(val) => {
-    setText(val)
-    onChangeText?.(val) 
-  }}
+          value={value}
+          onChangeText={onChangeText}
           placeholder={placeholder}
           placeholderTextColor="#ADD2FD"
           style={styles.input}
         />
 
-        {text.length > 0 && (
+        {value.length > 0 && (
           <>
             <Text style={styles.label}>{placeholder}</Text>
             <TouchableOpacity
-              onPress={() => setText('')}
+              onPress={onClear}
               style={styles.clearButton}
             >
               <Image
@@ -56,7 +53,6 @@ const AppInput =  ({ placeholder, onChangeText }: AppInputProps)  => {
 
 export default AppInput
 
-
 const styles = StyleSheet.create({
   container: {
     width: width * 0.9,
@@ -68,16 +64,15 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '100%',
-    height: 60, 
+    height: 60,
     borderRadius: 8,
     paddingHorizontal: 16,
-    paddingTop: 18, 
+    paddingTop: 18,
     backgroundColor: '#0734A9',
     color: '#FFFFFF',
     fontSize: 18,
-    paddingRight: 40, 
+    paddingRight: 40,
     textAlignVertical: 'center'
-
   },
   label: {
     position: 'absolute',
@@ -89,13 +84,10 @@ const styles = StyleSheet.create({
   clearButton: {
     position: 'absolute',
     right: 12,
-    bottom: 20, // positioned to right-bottom
+    bottom: 20,
   },
   crossIcon: {
     width: 18,
     height: 18,
   },
 })
-
-
-

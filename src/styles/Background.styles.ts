@@ -17,7 +17,8 @@ const BackgroundStyles  = StyleSheet.create({
   },
   logo: {
     position: 'absolute',
-    top: height * 0.06, 
+  //  top: height * 0.06,  orignal ye hai 
+  top:height * 0.12,
     alignSelf: 'center',
     width: width * 0.35, 
     height: height * 0.15,

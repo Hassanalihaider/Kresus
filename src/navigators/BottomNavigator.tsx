@@ -17,16 +17,16 @@ const tabBarIcons: Record<string, any> = {
 export const BottomNavigator = () => {
   return (
     <Tab.Navigator
-      screenOptions={({ route }) => ({
+      screenOptions={({ route }:any) => ({
         headerShown: false,
         tabBarShowLabel: true,
-        tabBarIcon: ({ focused }) => {
+        tabBarIcon: ({ focused }:any) => {
           const iconSource = tabBarIcons[route.name] || Images.home;
           const iconStyle = focused ? styles.activeFooterIcon : styles.inactiveFooterIcon;
 
           return <Image source={iconSource} style={iconStyle} resizeMode="contain" />;
         },
-        tabBarLabel: ({ focused }) => {
+        tabBarLabel: ({ focused }:any) => {
           const textStyle = focused ? styles.activeFooterText : styles.inactiveFooterText;
           return <Text style={[{ fontSize: 12, textAlign: 'center' }, textStyle]}>{route.name}</Text>;
         },

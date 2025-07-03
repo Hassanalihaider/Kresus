@@ -1,7 +1,7 @@
 import React from 'react'
 import WelcomeScreen from '../screens/Auth/WelcomeScreen'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import {SplashScreen, HomeScreen, OtpScreen, OtpSuccessScreen} from '../screens/index'
+import {SplashScreen, HomeScreen, OtpScreen, OtpSuccessScreen,UserNameScreen} from '../screens/index'
 import {BottomNavigator} from './BottomNavigator'
 
 const routeNames = {
@@ -11,7 +11,8 @@ const routeNames = {
   BottomNavigator: "BottomNavigator",
 
   otp: "Otp",
-   otpSuccessScreen: "OtpSuccess"
+   otpSuccessScreen: "OtpSuccess",
+   username: "UserName"
 }as const
 
 export type AppNavigatorParamList = {
@@ -21,6 +22,7 @@ export type AppNavigatorParamList = {
   Otp: { email: string }
   OtpSuccess: undefined
   BottomNavigator: undefined
+  UserName:undefined
 }
 
 const Stack = createNativeStackNavigator<AppNavigatorParamList>()
@@ -33,6 +35,7 @@ const RootNavigator = () => {
       <Stack.Screen name={routeNames.otp} component={OtpScreen} />
       <Stack.Screen name={routeNames.otpSuccessScreen} component={OtpSuccessScreen} />
       <Stack.Screen name={routeNames.BottomNavigator} component={BottomNavigator} />
+        <Stack.Screen name={routeNames.username} component={UserNameScreen} />
     </Stack.Navigator>
   )
 }
