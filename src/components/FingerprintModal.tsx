@@ -33,7 +33,7 @@ const FingerprintModal = ({ onContinue, onGoBack }: Props) => {
 
           <View style={styles.btnWrapper}>
             <View style={styles.actionBtn}>
-              <AppButton label="Activate" onPress={onContinue} />
+              <AppButton label="Activate" onPress={onContinue}   width={width * 0.8}/>
             </View>
 
             <View style={styles.secondaryBtn}>

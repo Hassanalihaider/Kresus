@@ -1,11 +1,28 @@
 import React from 'react'
-import { Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
+import {
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  Dimensions,
+   ViewStyle,
+} from 'react-native'
 
-const { width } = Dimensions.get('window')
+import type { DimensionValue } from 'react-native'
+const { width: screenWidth } = Dimensions.get('window')
 
-const AppButton = ({ label, onPress }: { label: string; onPress: () => void }) => {
+interface AppButtonProps {
+  label: string
+  onPress: () => void
+  width?: DimensionValue 
+}
+
+const AppButton = ({ label, onPress, width }: AppButtonProps) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.button}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.button, { width: width || screenWidth * 0.9 }]} 
+      activeOpacity={0.8}
+    >
       <Text style={styles.label}>{label}</Text>
     </TouchableOpacity>
   )
@@ -15,7 +32,7 @@ export default AppButton
 
 const styles = StyleSheet.create({
   button: {
-    width: width * 0.9,
+
     height: 55,
     backgroundColor: '#FFFFFF',
     borderRadius: 99,

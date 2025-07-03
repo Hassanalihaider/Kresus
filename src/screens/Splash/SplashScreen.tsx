@@ -8,7 +8,7 @@ import type { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import SplashScreenStyles from '../../styles/SplashScreen.styles'
 
 export const SplashScreen = ({navigation}:any) => {
- //const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
+//  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
   const [showContent, setShowContent] = useState(false)
 
 useEffect(() => {

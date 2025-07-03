@@ -84,6 +84,7 @@ export const SummaryCard: React.FC<SummaryCardProps> = ({
         bezier
         style={{
           marginVertical: 4,
+          marginLeft: 5,
           borderRadius: 12,
         }}
       />

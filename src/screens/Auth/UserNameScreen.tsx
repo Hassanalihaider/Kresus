@@ -13,7 +13,7 @@ import Background from '../../components/Background'
 import AppInput from '../../components/AppInput'
 import AppButton from '../../components/AppButton'
 import { Images } from '../../assets'
-import { AppNavigatorParamList } from '../../navigators/RootNavigator'
+import { AppNavigatorParamList } from '../../navigators/routeNames'
 
 const { width, height } = Dimensions.get('window')
 
@@ -64,7 +64,7 @@ const getLengthSymbol = () => {
           <Image source={Images.logo} style={styles.logo} />
           <Image source={Images.comment} style={styles.commentIcon} />
 
-          <Text style={styles.heading}>Select a username</Text>
+          <Text style={styles.heading}>Select a Username</Text>
 
           <AppInput
   placeholder="Enter your username"
@@ -84,7 +84,7 @@ const getLengthSymbol = () => {
 </View>
 
 
-          <AppButton label="Continue" onPress={() => navigation.navigate('Welcome')} />
+          <AppButton label="Continue" onPress={() => navigation.navigate('BottomNavigator')} />
         </View>
       </Background>
     </View>

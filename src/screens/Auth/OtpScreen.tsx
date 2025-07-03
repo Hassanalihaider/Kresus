@@ -6,7 +6,7 @@ import CheckboxRow from '../../components/CheckboxRow'
 import SecondaryButton from '../../components/SecondaryButton'
 import { Images } from '../../assets'
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native'
-import { AppNavigatorParamList } from '../../navigators/RootNavigator'
+import { AppNavigatorParamList } from '../../navigators/routeNames'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 const { width, height } = Dimensions.get('window')

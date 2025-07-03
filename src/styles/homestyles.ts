@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   cardContainer: {
     width: '95%',
+    height: 300,
     marginLeft: 10,
     backgroundColor: '#0D1A47',
     borderRadius: 16,
@@ -27,7 +28,7 @@ export default StyleSheet.create({
   },
   bannerImage: {
     width: '100%',
-    height: 180,
+    height: 240,
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
   },
@@ -197,7 +198,7 @@ skeletonTextBlock: {
 },
   currencyhead:{
     width: 62,
-    height: 27,
+    height: 25,
     color: 'lightblue',
     fontWeight: 500,
     fontSize: 20,
@@ -210,19 +211,19 @@ skeletonTextBlock: {
   backgroundColor: '#0734A9',
   borderRadius: 16,
   padding: 8,
-  marginBottom: 10,
+  marginBottom: 8,
 },
-prosBuyingSection: {
-  marginBottom: 12,
-},
+// prosBuyingSection: {
+//   marginBottom: 4,
+// },
 coinInfoHeader: {
   flexDirection: 'row',
   alignItems: 'center',
-  marginBottom: 8,
+  marginBottom: 2,
 },
 coinLogo: {
-  width: 60,
-  height: 60,
+  width: 40,
+  height: 40,
   borderRadius: 12,
   marginRight: 8,
 },
@@ -235,11 +236,11 @@ priceRow: {
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
-  marginBottom: 8,
+  marginBottom: 2,
 },
 coinPrice: {
   color: 'white',
-  fontSize: 24,
+  fontSize: 20,
   fontWeight: 'bold',
 },
 tradeButton: {
@@ -249,7 +250,7 @@ tradeButton: {
   paddingVertical: 8,
   paddingHorizontal: 12,
   borderRadius: 20,
-  marginLeft: 80,
+  marginLeft: 100,
 },
 tradeIcon: {
   width: 10,
@@ -319,11 +320,11 @@ sellersText: {
   summaryCard: {
   backgroundColor: '#101038',
   borderRadius: 16,
-  padding: 16,
+  padding: 14,
   marginBottom: 16,
 },
 summaryTopSection: {
-  marginBottom: 12,
+  marginBottom: 10,
 },
 cryptoTotalValue: {
   fontSize: 28,
@@ -347,20 +348,20 @@ timeFilterContainer: {
   justifyContent: 'space-between',
 },
 timeFilterButton: {
-  backgroundColor: '#1a1a2e',
-  paddingVertical: 5,
-  paddingHorizontal: 12,
-  borderRadius: 20,
+  backgroundColor: '#0734A9',
+  paddingVertical: 8,
+  paddingHorizontal: 14,
+  borderRadius: 12,
 },
 activeTimeFilterButton: {
-  backgroundColor: '#ffffff',
+  backgroundColor: '#01021d',
 },
 timeFilterText: {
   color: 'white',
   fontSize: 12,
 },
 activeTimeFilterText: {
-  color: 'black',
+  color: 'white',
 },
 prostext:{
   color: 'lightblue',
@@ -375,8 +376,9 @@ prossection:{
   justifyContent: 'space-between'
 },
 prosicon:{
-  width: 35,
-  height: 35,
+  width: 45,
+  height: 45,
+  paddingBottom: 6,
 },
   cryptoSummaryCard: {
   backgroundColor: '#101038',

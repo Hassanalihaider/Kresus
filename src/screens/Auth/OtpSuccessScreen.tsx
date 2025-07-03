@@ -4,7 +4,7 @@ import Background from '../../components/Background'
 import FingerprintModal from '../../components/FingerprintModal'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { AppNavigatorParamList } from '../../navigators/RootNavigator'
+import { AppNavigatorParamList } from '../../navigators/routeNames'
 
 
 export const OtpSuccessScreen = () => {
