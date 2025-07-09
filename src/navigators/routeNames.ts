@@ -1,4 +1,4 @@
-// navigators/routeNames.ts
+
 
 export const routeNames = {
   splash: "Splash",
@@ -9,6 +9,12 @@ export const routeNames = {
   username: "UserName",
   BottomNavigator: "BottomNavigator",
   prosScreen: "prosScreen",
+  Settings:"Settings",
+  Security:"Security",
+  Recovery:"Recovery",
+  Privacy:"Privacy",
+  Verification:"Verification",
+  TokenAsset:"TokenDetail"
 } as const
 
 export type AppNavigatorParamList = {
@@ -19,5 +25,11 @@ export type AppNavigatorParamList = {
   OtpSuccess: undefined
   BottomNavigator: undefined
   UserName: undefined
+  Settings: undefined
+  Security:undefined
+  Recovery:{email:string} | undefined
+  Privacy:undefined
+  Verification:undefined
+  TokenDetail:undefined
   // prosScreen: undefined
 }

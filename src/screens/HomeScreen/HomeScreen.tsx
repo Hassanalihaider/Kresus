@@ -12,7 +12,7 @@ import { Images } from '../../assets';
 import WelcomeOverlay from '../../components/WelcomeOverlay'; 
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { AppNavigatorParamList } from '../../navigators/RootNavigator'
+import { AppNavigatorParamList } from '../../navigators/routeNames'
 
 const { width: screenWidth } = Dimensions.get('window');
 
@@ -70,7 +70,7 @@ export const HomeScreen: React.FC = () => {
             <View style={styles.prossection}>
               <Text style={styles.prostext}>What the Pros are Buying</Text>
               <TouchableOpacity onPress={() => {
-                navigation.navigate('prosScreen') 
+             //   navigation.navigate('prosScreen') 
               }}>
                   <Image source={Images.pros} style={styles.prosicon} />
               </TouchableOpacity>
