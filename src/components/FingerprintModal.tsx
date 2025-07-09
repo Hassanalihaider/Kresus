@@ -1,5 +1,3 @@
-
-
 import React from 'react'
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native'
 import AppButton from './AppButton'
@@ -14,30 +12,26 @@ interface Props {
 }
 
 const FingerprintModal = ({ onContinue, onGoBack }: Props) => {
-   
   return (
     <View style={styles.container}>
       <View style={styles.modalBox}>
-       
         <View style={styles.logoWrapper}>
           <Image source={Images.iconcircle} style={styles.iconImg} resizeMode="contain" />
         </View>
 
-     
         <View style={styles.contentWrapper}>
           <Text style={styles.faceIdText}>Face ID</Text>
-
           <Text style={styles.subText}>
             Use your device’s Face ID for a more secure and convenient login experience.
           </Text>
 
           <View style={styles.btnWrapper}>
             <View style={styles.actionBtn}>
-              <AppButton label="Activate" onPress={onContinue}   width={width * 0.8}/>
+              <AppButton label="Activate" onPress={onContinue} width={width * 0.8} />
             </View>
 
             <View style={styles.secondaryBtn}>
-              <SecondaryButton label="Maybe Later"   onPress={onGoBack}  />
+              <SecondaryButton label="Maybe Later" onPress={onGoBack} />
             </View>
           </View>
         </View>
@@ -107,11 +101,10 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   actionBtn: {
-    width: 'auto', // will change 
+    width: 'auto', 
   },
   secondaryBtn: {
     width: 125,
     height: 45,
   },
 })
-

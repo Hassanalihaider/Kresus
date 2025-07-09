@@ -7345,6 +7345,7 @@ __metadata:
     prettier: 2.8.8
     react: 19.1.0
     react-native: ^0.80.0
+    react-native-biometrics: ^3.0.1
     react-native-chart-kit: ^6.12.0
     react-native-gesture-handler: ^2.27.1
     react-native-linear-gradient: ^2.8.3
@@ -8758,6 +8759,15 @@ __metadata:
   version: 19.1.0
   resolution: "react-is@npm:19.1.0"
   checksum: 3eb4eac7f09bf178bdc6fa98d384f5f243b85de7c99679a88b0154ead4d818ad94386ccb00ea31ec52409ffd13299057f5ec6ca2eaec06f9f7eddc1ad4832332
+  languageName: node
+  linkType: hard
+
+"react-native-biometrics@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "react-native-biometrics@npm:3.0.1"
+  peerDependencies:
+    react-native: ">=0.60.0"
+  checksum: 3864fea4bbf3dee1d360daf048e4f9980083c4e919e95082a5e4646e3b22475bb2b592cae18cccd7fb55b50498dca29e5346cf98d958646cbfc26fed5654bc53
   languageName: node
   linkType: hard
 

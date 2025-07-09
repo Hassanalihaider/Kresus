@@ -36,6 +36,21 @@ export const Images = {
   crossoverlay: require('./images/closeoverlay.png'),
   primary: require('./images/primary.png'),
   primary1: require('./images/primary1.png'),
-  primary2: require('./images/primary2.png')
-
+  primary2: require('./images/primary2.png'),
+  securityicon:require('./images/securityicon.png'),
+identity:require('./images/identity.png'),
+connections:require('./images/connections.png'),
+referrals:require('./images/referrals.png'),
+notifications:require('./images/notifications.png'),
+contacts:require('./images/contacts.png'),
+helpsupport:require('./images/helpsupport.png'),
+forward:require('./images/forward.png'),
+pro:require('./images/pro.png'),
+checked:require('./images/checked.png'),
+secureicon:require('./images/secureicon.png'),
+tick:require('./images/tick.png'),
+downarrow:require('./images/downarrow.png'),
+refresh:require('./images/refresh.png'),
+whitecross:require('./images/whitecross.png'),
+vaulticon:require('./images/vaulticon.png')
 }
