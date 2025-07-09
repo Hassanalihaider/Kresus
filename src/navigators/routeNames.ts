@@ -1,4 +1,5 @@
-// navigators/routeNames.ts
+import { BottomSheetScreen } from '../screens/BottomSheetScreen/BottomSheetScreen';
+import { ProsScreen } from '../screens/Pros/ProsScreen';
 
 export const routeNames = {
   splash: "Splash",
@@ -9,6 +10,8 @@ export const routeNames = {
   username: "UserName",
   BottomNavigator: "BottomNavigator",
   prosScreen: "prosScreen",
+  bottomscreen: "bottomscreen",
+  ProsScreen: "ProsScreen"
 } as const
 
 export type AppNavigatorParamList = {
@@ -19,5 +22,7 @@ export type AppNavigatorParamList = {
   OtpSuccess: undefined
   BottomNavigator: undefined
   UserName: undefined
-  // prosScreen: undefined
+  bottomscreen: undefined
+  ProsScreen: undefined
+  
 }

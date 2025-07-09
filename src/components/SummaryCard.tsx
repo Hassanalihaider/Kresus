@@ -46,7 +46,7 @@ export const SummaryCard: React.FC<SummaryCardProps> = ({
   };
 
   return (
-    <View style={[styles.summaryCard, { height: screenHeight * 0.33, width: screenHeight * 0.45, marginRight: 40 }]}>
+    <View style={[styles.summaryCard, { height: screenHeight * 0.29, width: screenHeight * 0.47, marginRight: 40 }]}>
       <View style={styles.summaryTopSection}>
         <Text style={styles.currencyhead}>{currency}</Text>
         <Text style={styles.cryptoTotalValue}>{totalValue}</Text>
@@ -65,7 +65,7 @@ export const SummaryCard: React.FC<SummaryCardProps> = ({
 
       <LineChart
         data={chartData}
-        width={screenHeight * 0.4}
+        width={screenHeight * 0.43}
         height={100}
         withDots={false}
         withInnerLines={false}

@@ -1,6 +1,43 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
+  sectionTitle: {
+  color: '#fff',
+  fontSize: 22,
+  fontWeight: '400',
+  marginBottom: 12,
+},
+
+cardRow: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  flexWrap: 'wrap',
+  marginBottom: 20,
+},
+skeletonExploreGrid: {
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  justifyContent: 'space-between',
+  paddingHorizontal: 16,
+  marginTop: 16,
+},
+// headings:{
+//   flexDirection: 'row',
+//   width: '20%',
+//   backgroundColor: 'skyblue',
+//   height: 50,
+//   marginBottom: 10,
+
+// },
+skeletonExploreCard: {
+  width: '47%',
+  height: 160,
+  borderRadius: 12,
+  backgroundColor: '#1E1E3F',
+  marginTop: 30,
+  marginBottom:146,
+},
+
   cardContainer: {
     width: '95%',
     height: 300,
@@ -211,7 +248,7 @@ skeletonTextBlock: {
   backgroundColor: '#0734A9',
   borderRadius: 16,
   padding: 8,
-  marginBottom: 8,
+  marginBottom: 6,
 },
 // prosBuyingSection: {
 //   marginBottom: 4,
@@ -318,19 +355,23 @@ sellersText: {
   fontWeight: 'bold',
 },
   summaryCard: {
+  borderTopWidth: 0.5,
+  borderLeftWidth: 0.5,
+  borderRightWidth: 0.5,
+  borderColor: 'lightblue',
   backgroundColor: '#101038',
   borderRadius: 16,
-  padding: 14,
+  padding: 10,
   marginBottom: 16,
 },
 summaryTopSection: {
-  marginBottom: 10,
+  marginBottom: 3,
 },
 cryptoTotalValue: {
-  fontSize: 28,
+  fontSize: 25,
   fontWeight: 'bold',
   color: 'white',
-  marginBottom: 8,
+  marginBottom: 3,
 },
 cryptoChangeRow: {
   flexDirection: 'row',
@@ -340,21 +381,22 @@ cryptoChangeText: {
   fontSize: 12,
 },
 cryptoChangeTime: {
-  color: '#666',
+  color: 'lightblue',
   fontSize: 12,
 },
 timeFilterContainer: {
   flexDirection: 'row',
   justifyContent: 'space-between',
+  marginBottom: 5,
 },
 timeFilterButton: {
-  backgroundColor: '#0734A9',
-  paddingVertical: 8,
-  paddingHorizontal: 14,
+  // backgroundColor: '#0734A9',
+  paddingVertical: 4,
+  paddingHorizontal: 12,
   borderRadius: 12,
 },
 activeTimeFilterButton: {
-  backgroundColor: '#01021d',
+  backgroundColor: '#0734A9',
 },
 timeFilterText: {
   color: 'white',
@@ -399,18 +441,20 @@ cryptoChangeNegative: {
     marginBottom: 16,
   },
   actionButton: {
-    padding: 10,
+    padding: 12,
     alignItems: 'center',
-    width: '23%',
+    width: '20%',
   },
   actionButtonIcon: {
-    width: 22,
-    height: 22,
-    marginBottom: 8,
-    tintColor: 'white',
+    resizeMode: 'cover',
+    width: 24,
+    height: 25,
+    marginBottom: 9,
+    marginTop: 10,
+    tintColor: '#7AB7FD',
   },
   actionButtonText: {
-    color: 'white',
+    color: '#7AB7FD',
     fontSize: 12,
   },
 
@@ -472,7 +516,7 @@ cryptoChangeNegative: {
     paddingVertical: 10,
   },
   content: {
-    padding: 15,
+    padding: 5,
     paddingBottom: 80, 
   },
     header: {

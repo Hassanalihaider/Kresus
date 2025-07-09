@@ -7,6 +7,7 @@ import { SplashScreen } from '../screens/Splash/SplashScreen'
 import { HomeScreen } from '../screens/HomeScreen/HomeScreen'
 import { OtpScreen } from '../screens/Auth/OtpScreen'
 import { OtpSuccessScreen } from '../screens/Auth/OtpSuccessScreen'
+import { BottomSheetScreen, ProsScreen } from '../screens'
 // import { ProsScreen } from '../screens/Pros/ProsScreen'
 import { UserNameScreen } from '../screens'
 import {BottomNavigator} from './BottomNavigator'
@@ -20,12 +21,12 @@ const RootNavigator = () => {
     <Stack.Navigator initialRouteName='Splash' screenOptions={defaultScreenOptions}>
       <Stack.Screen name= {routeNames.splash} component={SplashScreen} />
       <Stack.Screen name= {routeNames.welcome} component={WelcomeScreen} />
-      <Stack.Screen name={routeNames.homeScreen} component={HomeScreen} />
       <Stack.Screen name={routeNames.otp} component={OtpScreen} />
       <Stack.Screen name={routeNames.otpSuccessScreen} component={OtpSuccessScreen} />
       <Stack.Screen name={routeNames.BottomNavigator} component={BottomNavigator} />
       <Stack.Screen name={routeNames.username} component={UserNameScreen} />
-      {/* <Stack.Screen name={routeNames.prosScreen} component={ProsScreen}/> */}
+      <Stack.Screen name={routeNames.bottomscreen} component={BottomSheetScreen} />
+      <Stack.Screen name={routeNames.ProsScreen} component={ProsScreen} />
     </Stack.Navigator>
   )
 }

@@ -29,13 +29,23 @@ export const Images = {
   list6: require('./images/list6.png'),
   backscreen: require('./images/backscreen.png'),
   comment: require('./images/comment.png'),
-
   iconcircle:require('./images/iconcircle.png'),
-
   prosimage: require('./images/prosimage.png'),
   crossoverlay: require('./images/closeoverlay.png'),
   primary: require('./images/primary.png'),
   primary1: require('./images/primary1.png'),
-  primary2: require('./images/primary2.png')
+  primary2: require('./images/primary2.png'),
+  social: require('./images/social.png'),
+  nfts: require('./images/nfts.png'),
+  trade1: require('./images/trade1.png'),
+  trade2: require('./images/trade2.png'),
+  earn1: require('./images/earn1.png'),
+  earn2: require('./images/earn2.png'),
+  bottomhead: require('./images/bottomhead.png'),
+  up: require('./images/up.png'),
+  checked: require('./images/checked.png'),
+  back: require ('./images/back.png'),
+  probadge: require('./images/probadge.png'),
+  checked1: require('./images/checked1.png'),
 
 }

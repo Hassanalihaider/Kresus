@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import styles from '../styles/homestyles';
 
 type SkeletonLoaderProps = {
-  variant: 'summary' | 'actions' | 'market-activity' | 'user-card';
+  variant: 'summary' | 'actions' | 'market-activity' | 'user-card'| 'explore-card';
 };
 
 export const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({ variant }) => {
@@ -62,5 +62,15 @@ export const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({ variant }) => {
           </View>
         </View>
       );
+      case 'explore-card':
+  return (
+    // <View style={styles.headings}>
+    <View style={styles.skeletonExploreGrid}>
+      {[...Array(4)].map((_, i) => (
+        <View key={i} style={styles.skeletonExploreCard} />
+      ))}
+    </View>
+    // </View>
+  );
   }
 };

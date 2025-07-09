@@ -1,31 +1,31 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View, } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { useSharedValue } from 'react-native-reanimated'
 import React from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import { Images } from '../../assets/index'
-import {BottomSheetUnified} from '../../components/BottomSheet'
+import { BottomSheetUnified } from '../../components/BottomSheet'
+import { Images } from '../../assets/index';
 
 
-export const ProsScreen = ({navigation}: any) => {
+
+export const BottomSheetScreen = ({navigation}: any) => {
   const translateY = useSharedValue(0);
   return (
       <GestureHandlerRootView>
         <View style={styles.container}>
               <Image
-              source={Images.prosimage}
+              source={Images.trade1}
               style={styles.image}
               />
               <TouchableOpacity onPress={() => navigation.goBack()}>
               <View style={styles.backborder}>
               <Image
-                source={Images.crossoverlay}
-                style={styles.cross}
+              source={Images.crossoverlay}
+              style={styles.cross}
               />
               </View>
               </TouchableOpacity>
         </View>
-        <BottomSheetUnified screen="pro" translateY={translateY} />
-        
+      <BottomSheetUnified screen="explore" translateY={translateY} />
       </GestureHandlerRootView>
   )
 }
@@ -36,22 +36,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#070807'
   },
   image:{
-    width: '60%',
-    height: 220,
+    width: '100%',
+    height: 300,
     position: 'absolute',
-    marginTop: 40,
-    marginHorizontal: 90, 
   },
   cross:{
+    color: 'white',
     marginLeft: 5,
-    fontSize: 20,
-    fontWeight: '400',
-    tintColor: 'white'
+    fontSize: 25,
+    fontWeight: '700',
+    tintColor: 'white',
+    
   },
   backborder:{
     // backgroundColor: 'grey',
     // borderWidth: 1,
-    width: 25,
+    // width: 35,
     marginLeft: 20,
     marginTop: 20,
     // borderRadius: 20,    

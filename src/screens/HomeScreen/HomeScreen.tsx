@@ -10,13 +10,19 @@ import { Projects } from '../../components/Projects';
 import { ProjectsList } from '../../components/ProjectsList';
 import { Images } from '../../assets';
 import WelcomeOverlay from '../../components/WelcomeOverlay'; 
-import { useNavigation } from '@react-navigation/native'
-import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { AppNavigatorParamList } from '../../navigators/RootNavigator'
+import { DarkTheme, useNavigation } from '@react-navigation/native'
+import Animated, { useSharedValue } from 'react-native-reanimated';
+import { HeaderNav } from '../../components/HeaderNav';
+import {BottomSheetUnified} from '../../components/BottomSheet'
+
+// import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+// import { routeNames } from '../../navigators/routeNames';
 
 const { width: screenWidth } = Dimensions.get('window');
 
-export const HomeScreen: React.FC = () => {
+
+export const HomeScreen: React.FC = ({navigation}:any) => {
+  const translateY = useSharedValue(0);
   const [profilename] = useState('Nate Diggity');
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState('1D');
@@ -32,25 +38,11 @@ export const HomeScreen: React.FC = () => {
 
     return () => clearTimeout(timer);
   }, []);
-     const navigation = useNavigation<NativeStackNavigationProp<AppNavigatorParamList>>() 
+    //  const navigation = useNavigation<NativeStackNavigationProp<routeNames>>() 
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content"/>
-      <View style={styles.header}>
-        <View style={styles.profileContainer}>
-          <Image source={Images.profileicon} style={styles.profileIcon} />
-          <Text style={styles.profileName}>{profilename}</Text>
-        </View>
-        <View style={styles.headerIcons}>
-          <TouchableOpacity>
-            <Image source={Images.scanner} style={styles.headerIcon} />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={Images.secure} style={[styles.headerIcon, { marginLeft: 20 }]} />
-          </TouchableOpacity>
-        </View>
-      </View>
-
+      <HeaderNav/>
       <ScrollView contentContainerStyle={styles.content}>
         {showContent ? (
           <>
@@ -70,7 +62,7 @@ export const HomeScreen: React.FC = () => {
             <View style={styles.prossection}>
               <Text style={styles.prostext}>What the Pros are Buying</Text>
               <TouchableOpacity onPress={() => {
-                navigation.navigate('prosScreen') 
+                navigation.navigate('ProsScreen') 
               }}>
                   <Image source={Images.pros} style={styles.prosicon} />
               </TouchableOpacity>
@@ -104,6 +96,9 @@ export const HomeScreen: React.FC = () => {
       </ScrollView>
 
       {showOverlay && <WelcomeOverlay onClose={() => setShowOverlay(false)} />}
+      
+    <BottomSheetUnified screen="home" translateY={translateY} />
+
     </View>
   );
 };
