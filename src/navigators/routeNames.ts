@@ -1,5 +1,6 @@
 import { BottomSheetScreen } from '../screens/BottomSheetScreen/BottomSheetScreen';
 import { ProsScreen } from '../screens/Pros/ProsScreen';
+import { ProfileScreen } from '../screens/Profile/ProfileScreen';
 
 export const routeNames = {
   splash: "Splash",
@@ -11,7 +12,8 @@ export const routeNames = {
   BottomNavigator: "BottomNavigator",
   prosScreen: "prosScreen",
   bottomscreen: "bottomscreen",
-  ProsScreen: "ProsScreen"
+  ProsScreen: "ProsScreen",
+  ProfileScreen: "ProfileScreen"
 } as const
 
 export type AppNavigatorParamList = {
@@ -24,5 +26,5 @@ export type AppNavigatorParamList = {
   UserName: undefined
   bottomscreen: undefined
   ProsScreen: undefined
-  
+  ProfileScreen: undefined
 }

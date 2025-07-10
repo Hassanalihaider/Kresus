@@ -13,6 +13,7 @@ import { UserNameScreen } from '../screens'
 import {BottomNavigator} from './BottomNavigator'
 import { routeNames, AppNavigatorParamList } from './routeNames'
 import { defaultScreenOptions } from './screenOptions'
+import { ProfileScreen } from '../screens/Profile/ProfileScreen'
 
 
 const Stack = createNativeStackNavigator<AppNavigatorParamList>()
@@ -27,6 +28,7 @@ const RootNavigator = () => {
       <Stack.Screen name={routeNames.username} component={UserNameScreen} />
       <Stack.Screen name={routeNames.bottomscreen} component={BottomSheetScreen} />
       <Stack.Screen name={routeNames.ProsScreen} component={ProsScreen} />
+      <Stack.Screen name={routeNames.ProfileScreen} component={ProfileScreen} />
     </Stack.Navigator>
   )
 }
