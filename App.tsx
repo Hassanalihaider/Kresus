@@ -1,6 +1,6 @@
+import 'react-native-reanimated';
 import React from 'react'
 import 'react-native-gesture-handler';
-import 'react-native-reanimated';
 import { NavigationContainer } from '@react-navigation/native'
 import RootNavigator from './src/navigators/RootNavigator'
 import { StatusBar, View, StyleSheet } from 'react-native'
@@ -15,7 +15,6 @@ const App = () => {
     </NavigationContainer>
     </View>
     </GestureHandlerRootView>
-
   )
 }
 const styles = StyleSheet.create({

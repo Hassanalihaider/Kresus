@@ -84,7 +84,7 @@ const getLengthSymbol = () => {
 </View>
 
 
-          <AppButton label="Continue" onPress={() => navigation.navigate('BottomNavigator')} />
+          <AppButton label="Continue" onPress={() => navigation.navigate('Settings')} />
         </View>
       </Background>
     </View>

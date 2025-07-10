@@ -1,5 +1,7 @@
+
 import React from 'react'
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native'
+import AppHeader from '../../components/AppHeader'
 import { Images } from '../../assets'
 import { useNavigation } from '@react-navigation/native'
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack'

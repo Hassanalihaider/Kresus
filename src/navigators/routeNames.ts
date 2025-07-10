@@ -13,7 +13,13 @@ export const routeNames = {
   prosScreen: "prosScreen",
   bottomscreen: "bottomscreen",
   ProsScreen: "ProsScreen",
-  ProfileScreen: "ProfileScreen"
+  ProfileScreen: "ProfileScreen",
+  Settings:"Settings",
+  Security:"Security",
+  Recovery:"Recovery",
+  Privacy:"Privacy",
+  Verification:"Verification",
+  TokenAsset:"TokenDetail"
 } as const
 
 export type AppNavigatorParamList = {
@@ -27,4 +33,11 @@ export type AppNavigatorParamList = {
   bottomscreen: undefined
   ProsScreen: undefined
   ProfileScreen: undefined
+  Settings: undefined
+  Security:undefined
+  Recovery:{email:string} | undefined
+  Privacy:undefined
+  Verification:undefined
+  TokenDetail:undefined
+  // prosScreen: undefined
 }

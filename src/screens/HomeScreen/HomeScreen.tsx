@@ -17,6 +17,8 @@ import {BottomSheetUnified} from '../../components/BottomSheet'
 
 // import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 // import { routeNames } from '../../navigators/routeNames';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { AppNavigatorParamList } from '../../navigators/routeNames'
 
 const { width: screenWidth } = Dimensions.get('window');
 

@@ -1,5 +1,5 @@
 import React,{ReactNode} from 'react'
-import { View, Image, StyleSheet, Dimensions } from 'react-native'
+import { View, Image, StyleSheet, Dimensions ,DimensionValue} from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import { Images } from '../assets'
 import BackgroundStyles from '../styles/Background.styles'
@@ -10,16 +10,19 @@ type Props = {
    children?: ReactNode
    showLogo?: boolean 
     hideBottomImages?: boolean
+    containerHeight?: DimensionValue
 }
 
-const Background = ({ showContent = true,children ,showLogo,hideBottomImages  }: Props) => {
+const Background = ({ showContent = true,children ,showLogo,hideBottomImages,containerHeight  }: Props) => {
   return (
     <LinearGradient
      colors={['#080C4C',  '#0E1799']} 
   locations={[0, 1]}
-      style={BackgroundStyles.gradient}
-      //  colors={['#080C4C', '#0E1799']}
-    //   locations={[0.5,1]} (will discuss issue with sir )
+    style={[
+    BackgroundStyles.gradient,
+    { height: containerHeight ?? '100%' }, 
+  ]}
+      
     >
 
     

@@ -8,6 +8,7 @@ import { AssetsScreen } from '../screens/Assets/AssetsScreen';
 import { Image, Text } from 'react-native';
 import { Images } from '../assets/index'; 
 import styles from '../styles/homestyles';
+import PrivacyPolicyScreen from '../screens/Settings/PrivacyPolicyScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -47,6 +48,7 @@ export const BottomNavigator = () => {
       <Tab.Screen name="Assets" component={AssetsScreen} />
       <Tab.Screen name="Trade" component={TradeScreen} />
       <Tab.Screen name="Explore" component={ExploreScreen} />
+      {/* <Tab.Screen name="PrivacyPolicyScreen" component={PrivacyPolicyScreen} /> */}
     </Tab.Navigator>
   );
 };

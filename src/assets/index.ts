@@ -47,5 +47,19 @@ export const Images = {
   back: require ('./images/back.png'),
   probadge: require('./images/probadge.png'),
   checked1: require('./images/checked1.png'),
-
+  securityicon:require('./images/securityicon.png'),
+identity:require('./images/identity.png'),
+connections:require('./images/connections.png'),
+referrals:require('./images/referrals.png'),
+notifications:require('./images/notifications.png'),
+contacts:require('./images/contacts.png'),
+helpsupport:require('./images/helpsupport.png'),
+forward:require('./images/forward.png'),
+pro:require('./images/pro.png'),
+secureicon:require('./images/secureicon.png'),
+tick:require('./images/tick.png'),
+downarrow:require('./images/downarrow.png'),
+refresh:require('./images/refresh.png'),
+whitecross:require('./images/whitecross.png'),
+vaulticon:require('./images/vaulticon.png')
 }

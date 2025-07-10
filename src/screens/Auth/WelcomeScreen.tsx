@@ -16,7 +16,7 @@ import { Dimensions } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import AppButton from '../../components/AppButton'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { AppNavigatorParamList } from '../../navigators/RootNavigator'
+import { AppNavigatorParamList } from '../../navigators/routeNames'
 
 
 const { height } = Dimensions.get('window')
@@ -107,13 +107,13 @@ const WelcomeScreen = () => {
             </>
           )}
 
-          {/* <AppInput placeholder="Enter your email" onChangeText={setEmailText} /> */}
+        
           <AppInput
-  placeholder="Enter your email"
-  value={emailText}
-  onChangeText={setEmailText}
-  onClear={() => setEmailText('')}
-/>
+            placeholder="Enter your email"
+            value={emailText}
+            onChangeText={setEmailText}
+            onClear={() => setEmailText('')}
+          />
 
         </Animated.View>
 
@@ -139,11 +139,11 @@ const WelcomeScreen = () => {
         )}
 
         {keyboardVisible && (
-  <AppButton
-    label="Continue"
-  onPress={() => navigation.navigate('Otp', { email: emailText })}
-  />
-)}
+      <AppButton
+        label="Continue"
+        onPress={() => navigation.navigate('Otp', { email: emailText })}
+      />
+        )}
 
       </Background>
     </View>

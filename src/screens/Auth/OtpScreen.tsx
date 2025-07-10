@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {View,Text,StyleSheet,TouchableOpacity,Image,Dimensions,KeyboardAvoidingView,Platform,} from 'react-native'
+import {View,Text,StyleSheet,TouchableOpacity,Image,Dimensions,KeyboardAvoidingView,Platform,ScrollView} from 'react-native'
 import Background from '../../components/Background'
 import OTPInputBox from '../../components/OTPInputBox'
 import CheckboxRow from '../../components/CheckboxRow'
@@ -23,10 +23,11 @@ export const OtpScreen = () => {
   return (
     <View style={{ flex: 1 }}>
       <Background showContent hideBottomImages={false} showLogo={false}>
-        <KeyboardAvoidingView
+         <KeyboardAvoidingView
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}
           style={{ flex: 1 }}
         >
+
           <View style={styles.wrapper}>
           
             <TouchableOpacity
@@ -79,7 +80,10 @@ export const OtpScreen = () => {
               />
             </View>
           </View>
-        </KeyboardAvoidingView>
+
+          
+        </KeyboardAvoidingView> 
+  
       </Background>
     </View>
   )
@@ -157,7 +161,11 @@ const styles = StyleSheet.create({
     width: '100%',
     gap: 12,
     paddingLeft: 2,
-  },
+  },scrollContent: {
+  flexGrow: 1,
+  justifyContent: 'flex-start',
+},
+
 })
 
 
